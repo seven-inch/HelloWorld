@@ -4,33 +4,37 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.helloworld.R;
 
-public class GridAdapter extends RecyclerView.Adapter<GridAdapter.GridViewHolder> {
+public class StaggeredGridAdapter extends RecyclerView.Adapter<StaggeredGridAdapter.StaggeredGridViewHolder> {
 
     private Context mContext;
     private OnItemClickerListener mListener;
     private OnItemLongClickListener mLListener;
 
-    GridAdapter(Context context, OnItemClickerListener listener, OnItemLongClickListener llistener){
+    StaggeredGridAdapter(Context context, OnItemClickerListener listener, OnItemLongClickListener llistener){
         this.mContext = context;
         this.mListener = listener;
         this.mLListener = llistener;
     }
     @NonNull
     @Override
-    public GridAdapter.GridViewHolder  onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new GridViewHolder(LayoutInflater.from(mContext).inflate(R.layout.layout_grid_recyclerview_item,parent,false));
+    public StaggeredGridAdapter.StaggeredGridViewHolder  onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new StaggeredGridViewHolder(LayoutInflater.from(mContext).inflate(R.layout.layout_staggered_grid_recycler_item,parent,false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull GridAdapter.GridViewHolder  holder, int position) {
-        holder.textView.setText("GGMU!");
+    public void onBindViewHolder(@NonNull StaggeredGridAdapter.StaggeredGridViewHolder  holder, int position) {
+        if(position % 2 != 0) {
+            holder.imageView.setImageResource(R.drawable.image1);
+        }else{
+            holder.imageView.setImageResource(R.drawable.image2);
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,16 +55,15 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.GridViewHolder
 
     @Override
     public int getItemCount() {
-        return 80;
+        return 30;
     }
 
-    class GridViewHolder extends RecyclerView.ViewHolder{
+    class StaggeredGridViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView textView;
-
-        public GridViewHolder(@NonNull View itemView) {
+        private ImageView imageView;
+        public StaggeredGridViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.tv_title);
+            imageView = (ImageView) itemView.findViewById(R.id.iv);
         }
     }
 
