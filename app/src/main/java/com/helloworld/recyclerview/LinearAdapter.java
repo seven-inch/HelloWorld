@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.helloworld.R;
 
-public class LinearAdapter extends RecyclerView.Adapter<LinearAdapter.LinearViewHolder> {
+public class LinearAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private Context mContext;
     private OnItemClickerListener mListener;
@@ -27,13 +28,25 @@ public class LinearAdapter extends RecyclerView.Adapter<LinearAdapter.LinearView
 
     @NonNull
     @Override
-    public LinearAdapter.LinearViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new LinearViewHolder(LayoutInflater.from(mContext).inflate(R.layout.layout_linear_item, parent, false));
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        if(viewType ==0){
+            return new LinearViewHolder(LayoutInflater.from(mContext).inflate(R.layout.layout_linear_item, parent, false));
+        }else{
+            return new LinearViewHolder2(LayoutInflater.from(mContext).inflate(R.layout.layout_linear_item_2, parent, false));
+        }
+
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LinearAdapter.LinearViewHolder holder, int position) {
-        holder.textView.setText("GGMU!");
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        if(getItemViewType(position) == 0){
+            LinearViewHolder mholder = (LinearViewHolder) holder;
+            mholder.textView.setText("GGMU!");
+        }else{
+            LinearViewHolder2 mholder = (LinearViewHolder2) holder;
+            mholder.textView.setText("Glory Glory MU!");
+        }
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +65,16 @@ public class LinearAdapter extends RecyclerView.Adapter<LinearAdapter.LinearView
     }
 
     @Override
+    public int getItemViewType(int position) {
+        if(position % 2 == 0){
+            return 0;
+        }else{
+            return 1;
+        }
+
+    }
+
+    @Override
     public int getItemCount() {
         return 30;
     }
@@ -59,10 +82,19 @@ public class LinearAdapter extends RecyclerView.Adapter<LinearAdapter.LinearView
     class LinearViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textView;
-
         public LinearViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.tv_title);
+        }
+    }
+    class LinearViewHolder2 extends RecyclerView.ViewHolder {
+
+        private TextView textView;
+        private ImageView imageView;
+        public LinearViewHolder2(@NonNull View itemView) {
+            super(itemView);
+            textView = (TextView) itemView.findViewById(R.id.tv_title);
+            imageView = (ImageView) itemView.findViewById(R.id.iv_title);
         }
     }
 
