@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnGridView;
     private Button mBtnRecyclerView;
     private Button mBtnWebView;
-
+    private Button mBtnToast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnGridView = (Button) findViewById(R.id.btn_gridview);
         mBtnRecyclerView = (Button) findViewById(R.id.btn_recyclerview);
         mBtnWebView = (Button) findViewById(R.id.btn_webview);
+        mBtnToast = (Button) findViewById(R.id.btn_toast);
         setListeners();
 
     }
@@ -64,9 +65,10 @@ public class MainActivity extends AppCompatActivity {
         mBtnGridView.setOnClickListener(onClick);
         mBtnRecyclerView.setOnClickListener(onClick);
         mBtnWebView.setOnClickListener(onClick);
+        mBtnToast.setOnClickListener(onClick);
     }
 
-    private class OnClick implements  View.OnClickListener{
+    private class OnClick implements View.OnClickListener{
         @Override
         public void onClick(View v) {
             Intent intent = null;
@@ -110,6 +112,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_webview:
                     //跳转到WebView演示界面
                     intent = new Intent(MainActivity.this, WebViewActivity.class);
+                    break;
+                case R.id.btn_toast:
+                    //跳转到Toast演示界面
+                    intent = new Intent(MainActivity.this, ToastActivity.class);
                     break;
             }
             startActivity(intent);
