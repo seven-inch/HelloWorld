@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.helloworld.MainActivity;
 import com.helloworld.R;
 public class RecyclerViewActivity extends AppCompatActivity {
 
