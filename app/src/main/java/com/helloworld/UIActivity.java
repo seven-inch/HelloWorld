@@ -25,6 +25,7 @@ public class UIActivity extends AppCompatActivity {
     private Button mBtnWebView;
     private Button mBtnToast;
     private Button mBtnDialog;
+    private Button mBtnProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnWebView = (Button) findViewById(R.id.btn_webview);
         mBtnToast = (Button) findViewById(R.id.btn_toast);
         mBtnDialog = (Button) findViewById(R.id.btn_dialog);
+        mBtnProgress = (Button) findViewById(R.id.btn_progress);
         setListeners();
 
     }
@@ -69,6 +71,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnWebView.setOnClickListener(onClick);
         mBtnToast.setOnClickListener(onClick);
         mBtnDialog.setOnClickListener(onClick);
+        mBtnProgress.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -123,6 +126,10 @@ public class UIActivity extends AppCompatActivity {
                 case R.id.btn_dialog:
                     //跳转到AlertDialog演示界面
                     intent = new Intent(UIActivity.this, DialogActivity.class);
+                    break;
+                case R.id.btn_progress:
+                    //跳转到ProgressBar演示界面
+                    intent = new Intent(UIActivity.this, ProgressActivity.class);
                     break;
             }
             startActivity(intent);
