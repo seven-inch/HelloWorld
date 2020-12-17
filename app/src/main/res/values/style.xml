@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="MyProgressBar">
-        <item name="android:indeterminateDrawable" >@drawable/bg_progress</item>
+        <item name="android:indeterminateDrawable">@drawable/bg_progress</item>
     </style>
 
+    <style name="Custom_Dialog" parent="@android:style/Theme.Dialog">
+        <!--  设置背景透明-->
+        <item name="android:windowBackground">@color/colorTransparent</item>
+        <!--设置是否有边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--设置是否有标题栏-->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置是否有遮盖-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 设置是否浮在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--添加我们的drawable文件-->
+        <item name="android:background">@color/colorTransparent</item>
+    </style>
 
 </resources>
