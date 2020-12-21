@@ -20,5 +20,12 @@
         android:text="Finish"
         android:textAllCaps="false"
         android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/jump"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jump To A"
+        android:textAllCaps="false"
+        />
 
 </LinearLayout>

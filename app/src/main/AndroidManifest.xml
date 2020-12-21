@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity android:name=".jump.BActivity"
-            android:label="B">
+            android:label="B"
+            android:launchMode="singleTask"
+            >
             <intent-filter>
                 <action android:name="com.helloworld.test.BActivity"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -20,7 +22,9 @@
 
         </activity>>
         <activity android:name=".jump.AActivity"
-            android:label="A">
+            android:label="A"
+            android:launchMode="singleTask"
+            >
         </activity>>
 
         <activity android:name=".LifeCycleActivity" />
