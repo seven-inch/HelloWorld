@@ -11,22 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
-        <activity android:name=".jump.BActivity"
+        <activity android:name=".fragment.ContainerActivity"></activity>
+        <activity
+            android:name=".jump.BActivity"
             android:label="B"
-            android:launchMode="singleTask"
-            >
+            android:launchMode="singleTask">
             <intent-filter>
-                <action android:name="com.helloworld.test.BActivity"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.helloworld.test.BActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
-        </activity>>
-        <activity android:name=".jump.AActivity"
-            android:label="A"
-            android:launchMode="singleTask"
-            >
-        </activity>>
-
+        </activity>
+        <activity
+            android:name=".jump.AActivity"
+            android:label="A"></activity>
         <activity android:name=".LifeCycleActivity" />
         <activity android:name=".PopupWindowActivity" />
         <activity android:name=".CustomDialogActivity" />

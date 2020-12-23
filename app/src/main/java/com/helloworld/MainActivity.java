@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.helloworld.fragment.ContainerActivity;
 import com.helloworld.jump.AActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
    private Button mBtnUI;
    private Button mBtnLifeCycle;
    private Button mBtnJump;
+   private Button mBtnFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnUI = (Button) findViewById(R.id.btn_ui);
         mBtnLifeCycle = (Button) findViewById(R.id.btn_lifecycle);
         mBtnJump = (Button) findViewById(R.id.btn_jump);
+        mBtnFragment = (Button) findViewById(R.id.btn_fragment);
         setLinsteners();
     }
 
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnUI.setOnClickListener(onClick);
         mBtnLifeCycle.setOnClickListener(onClick);
         mBtnJump.setOnClickListener(onClick);
+        mBtnFragment.setOnClickListener(onClick);
     }
     private class OnClick implements View.OnClickListener{
         @Override
@@ -44,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_jump:
                     intent = new Intent(MainActivity.this, AActivity.class);
+                    break;
+                case R.id.btn_fragment:
+                    intent = new Intent(MainActivity.this, ContainerActivity.class);
                     break;
             }
             startActivity(intent);
