@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
-        <activity android:name=".Event.EventActivity"></activity>
+        <activity android:name=".HandlerActivity"></activity>
+        <activity android:name=".Event.EventActivity" />
         <activity android:name=".fragment.ContainerActivity" />
         <activity
             android:name=".jump.BActivity"

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.widget.Button;
 
 import com.helloworld.R;
@@ -37,6 +38,20 @@ public class EventActivity extends AppCompatActivity implements View.OnClickList
                 return false;
             }
         });
+        mBtnMy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Listener", "---onClick---");
+            }
+        });
+
+        mBtnMy.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                return false;
+            }
+        });
+
         //一、通过内部类实现
         mBtnEvent.setOnClickListener(new OnClick());
 

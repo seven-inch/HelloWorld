@@ -24,6 +24,7 @@ public class MyButton extends AppCompatButton {
         super(context, attrs, defStyleAttr);
     }
 
+    /*//基于回调事件的处理机制
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         super.onTouchEvent(event);
@@ -33,5 +34,22 @@ public class MyButton extends AppCompatButton {
                 break;
         }
         return true;
+    }*/
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        Log.d("MyButton", "---dispatchTouchEvent---");
+        return super.dispatchTouchEvent(event);
+    }
+
+    //源发剖析，了解View的事件分发
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                Log.d("MyButton", "---onTouchEvent---");
+                break;
+        }
+        return super.onTouchEvent(event);
     }
 }

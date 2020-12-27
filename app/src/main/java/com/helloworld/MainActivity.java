@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
    private Button mBtnJump;
    private Button mBtnFragment;
    private Button mBtnEvent;
+   private Button mBtnHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnJump = (Button) findViewById(R.id.btn_jump);
         mBtnFragment = (Button) findViewById(R.id.btn_fragment);
         mBtnEvent = (Button) findViewById(R.id.btn_event);
+        mBtnHandler = (Button) findViewById(R.id.btn_handler);
         setLinsteners();
     }
 
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnJump.setOnClickListener(onClick);
         mBtnFragment.setOnClickListener(onClick);
         mBtnEvent.setOnClickListener(onClick);
+        mBtnHandler.setOnClickListener(onClick);
     }
     private class OnClick implements View.OnClickListener{
         @Override
@@ -58,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_event:
                     intent = new Intent(MainActivity.this, EventActivity.class);
+                    break;
+                case R.id.btn_handler:
+                    intent = new Intent(MainActivity.this, HandlerActivity.class);
                     break;
             }
             startActivity(intent);
