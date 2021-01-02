@@ -3,6 +3,7 @@
     package="com.helloworld">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
-        <activity android:name=".HandlerActivity"></activity>
+        <activity android:name=".ObjectAnimActivity"></activity>
+        <activity android:name=".broadcast.BroadActivity" />
+        <activity android:name=".broadcast.BroadActivity2" />
+        <activity android:name=".datastorage.FileActivity" />
+        <activity android:name=".datastorage.SharedPreferencesActivity" />
+        <activity android:name=".datastorage.DataStorageActivity" />
+        <activity android:name=".HandlerActivity" />
         <activity android:name=".Event.EventActivity" />
         <activity android:name=".fragment.ContainerActivity" />
         <activity

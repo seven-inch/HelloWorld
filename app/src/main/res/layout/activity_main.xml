@@ -45,4 +45,26 @@
         android:layout_height="wrap_content"
         android:text="Handler"
         android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="数据存储"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Broadcast"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_object"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="动画"
+        android:textAllCaps="false"/>
+
 </LinearLayout>
